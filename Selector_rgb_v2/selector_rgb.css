@@ -1,0 +1,115 @@
+/*https://lenguajecss.com/p/css/propiedades/grid-css*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --red: 0;
+    --green: 0;
+    --blue: 0;
+    --alpha: 1;
+
+    --column-width-color: 80vw;
+    --column-width-result: 20vw;
+}
+
+@media (max-width: 767px) {
+    #main {
+        flex-wrap: wrap;
+    }
+
+    #color {
+        --column-width-color: 100vw;
+    }
+
+    #result {
+        --column-width-result: 100vw;
+    }
+
+    .posicion {
+        display: block;
+    }
+}
+
+#main {
+    display: flex;
+}
+
+#color {
+    display: grid;
+    min-height: 100vh;
+    width: var(--column-width-color);
+    align-content: center;
+    justify-content: center;
+    background: rgba(var(--red), var(--green), var(--blue), var(--alpha));
+}
+
+label {
+    width: 55vw;
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: .25em;
+    padding: .5em;
+    display: flex;
+}
+
+input[type=range] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 40vw;
+}
+
+input[type=button] {
+    width: 55vw;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: .25em;
+    padding: .5em;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1.3em;
+}
+
+input[type=button]:hover {
+    width: 55vw;
+    color:rgba(var(--red), var(--green), var(--blue), var(--alpha));
+    border-color: white;
+    border-radius: .25em;
+    padding: .5em;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1.3em;
+}
+
+.marcador {
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: .25em;
+    font-family: 'Ropa Sans', sans-serif;
+    background: white;
+    min-width: 10vw;
+    border-radius: .25em;
+    margin-left: 1em;
+    padding-top: .3em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.posicion {
+    display: flex;
+}
+
+#result {
+    padding: 1em;
+    min-height: 100vh;
+    width: var(--column-width-result);
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1.3em;  
+}
+li {
+    list-style: none;
+}

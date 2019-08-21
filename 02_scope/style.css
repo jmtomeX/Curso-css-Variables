@@ -1,0 +1,22 @@
+:root {
+    --main-color: orange;
+    --inline: purple;
+}
+
+p {
+    color: var(--color);
+}
+
+article {
+    --color: red;
+}
+
+section {
+    --color: green;
+}
+
+p:nth-child(3) {
+    background: var(--inline-html);
+    color: var(--inline);
+    
+}

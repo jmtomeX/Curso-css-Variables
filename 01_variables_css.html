@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Untitled Document</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
-</head>
-<body>
+    <style>
+        :root {
+            --color: purple;
+            --link-color: orange;
+            /*--bg-color:yellow*/
+            --second-bg-color: lime;
+            --box-shadow: 2px 2px 5px #000;
+        }
 
-</body>
-</html>
+        html {
+            background: var(--bg-color, var(--second-bg-color));
+        }
+
+        a {
+            color: var(--link-color);
+        }
+        h1 {
+            box-shadow: var(--box-shadow);
+            width: 60%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>
+        Mini curso Premiun: Variables CSS
+    </h1>
+    <p>
+        Las variables CSS tienen herencia y cascada.
+    </p>
+
+    <h2>Valores de sustitución (fallback) de propiedades personalizadas</h2>
+
+    <p>Utilizando var() puede definir múltiples valores de sustitución (fallback) cuando la variable dada no está definida aún, esto puede ser útil cuando se trabaja con Custom Elements y Shadow DOM.
+    </p>
+    <p>
+        El primer argumento a la función es el nombre de la propiedad personalizada que se va a sustituir. El segundo argumento a la función, si se proporciona, es un valor de reserva, que se utiliza como valor de sustitución cuando la propiedad personalizada referenciada no es válida
+    </p>
+    <a href="#!">A ninguna parte.</a>
+</body></html>

@@ -1,0 +1,27 @@
+/* Las variables pueden ser interpoladas */
+/* https://www.sassmeister.com */
+
+$selector: button;
+
+.#{$selector} {
+    color:red;
+    width:3em;
+}
+
+$red: red;
+$green: green;
+$blue: blue;
+
+@each $color in $red, $green,$blue {
+        .#{$color} {
+            color: $color;
+        }
+    }
+
+$largeBP: 1024px;
+
+@media screen and(min-width: $largeBP) {
+        p {
+        background:yellow;
+        }
+    }

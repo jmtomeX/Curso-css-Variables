@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bar-color:orange;
+    --width: 0;
+}
+
+body::before {
+    content: '';
+    display: block;
+    height: 100vh;
+    opacity: .1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--bar-color);
+    
+    width: calc(var(--width) * 1vw);
+}

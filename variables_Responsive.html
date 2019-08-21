@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --font-size: 2em;
+            --column-size: 100%;
+            ;
+        }
+
+        h1 {
+            font-size: var(--font-size);
+            text-align: center;
+        }
+
+        @media screen and (min-width: 1024px) {
+            h1 {
+                --font-size: 5em;
+            }
+
+            .column {
+                --column-size: 33.33%;
+                color: orangered;
+            }
+        }
+               
+            @media (max-width: 767px) { 
+                .column {
+                    border: 1px solid black;
+                    margin: 1em;
+                    padding: 1em;
+                }  
+            
+            }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            width: var(--column-size);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bienvenidos a mi Web</h1>
+    <div class="row">
+        <div class="column">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dignissimos quasi, quae, eveniet sed dolor explicabo nobis iure tenetur laboriosam praesentium? A quas iure, sunt nihil earum inventore nostrum iusto!</p>
+        </div>
+        <div class="column">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere voluptate maiores, accusantium eligendi eius dolor consectetur eum praesentium sapiente quidem, ratione repellat ab doloribus, quas sed quod aliquid, dignissimos nihil!</p>
+        </div>
+        <div class="column">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id earum magnam maiores vitae esse hic, odio culpa voluptas cumque, officiis impedit corporis velit eaque, dolorum est ad voluptatibus qui animi!</p>
+        </div>
+
+    </div>
+</body></html>

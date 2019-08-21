@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 2em;
+        }
+
+        h1 {
+            font-family: 'Rock Salt', cursive;
+        }
+
+        .css {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sass vs Css</h1>
+    <p>
+        * <b>Sass</b> se pueden declarar sin selectot <br>
+        * Las variables tienen scope de bloque <br>
+        * Operaciones aritméticas ya compiladas <br>
+        * Puede ser interpoladas. Se pueden construir otra expresion un selector, una propiedad o una función.
+        * Se le pueden pasar variables a las mediaQuerys. <br>
+        * No se pueden redefinir. <br>
+        * Las variables no existen depués de la compilación.
+
+    </p>
+    <p class="css">
+        * <b>CSS</b> necesitan un selector <br>
+        * Las variables tienen scope de DOM, es decir del padre a todos sus descendientes <br>
+        * Operaciones aritméticas calc(), las compila el navegador <br>
+        * No se pueden usar funciones de color para manipular colores. <br>
+        * No pueden ser interpoladas. <br>
+        * No se le pueden pasar variables a las mediaQuerys, el navegador no las entiende. <br>
+        * Se pueden redefinir. <br>
+        * Las variables existen en el DOM.
+        
+        
+
+    </p>
+    <button type="submit" class="button">ENtrar</button>
+    </body></html>
