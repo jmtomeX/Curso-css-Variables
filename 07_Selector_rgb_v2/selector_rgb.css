@@ -4,6 +4,7 @@
 *::after {
     box-sizing: border-box;
     margin: 0;
+    list-style: none;
 }
 
 :root {
@@ -11,9 +12,23 @@
     --green: 0;
     --blue: 0;
     --alpha: 1;
+    --color-rgba: rgba(var(--red), var(--green), var(--blue), var(--alpha));
+
+    --z-back: -10;
+    /*si se quiere mandar al fondo*/
+    --z-normal: 1;
+    /*si se ve uno raro */
+    --z-tooltip: 10;
+    /*mensajes tooltip*/
+    --z-fixed: 100;
+    /* elemento fijo en el DOM*/
+    --z-modal: 1000;
+    /*capa que oculta todo*/
 
     --column-width-color: 80vw;
     --column-width-result: 20vw;
+
+    --font-main: 'Ropa Sans', sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -44,7 +59,7 @@
     width: var(--column-width-color);
     align-content: center;
     justify-content: center;
-    background: rgba(var(--red), var(--green), var(--blue), var(--alpha));
+    background: var(--color-rgba);
 }
 
 label {
@@ -55,6 +70,10 @@ label {
     border-radius: .25em;
     padding: .5em;
     display: flex;
+}
+
+label:hover {
+    border-color:
 }
 
 input[type=range] {
@@ -70,17 +89,17 @@ input[type=button] {
     border: 1px solid black;
     border-radius: .25em;
     padding: .5em;
-    font-family: 'Ropa Sans', sans-serif;
+    font-family: var(--font-main);
     font-size: 1.3em;
 }
 
 input[type=button]:hover {
     width: 55vw;
-    color:rgba(var(--red), var(--green), var(--blue), var(--alpha));
+    color: var(--color-rgba);
     border-color: white;
     border-radius: .25em;
     padding: .5em;
-    font-family: 'Ropa Sans', sans-serif;
+    font-family: var(--font-main);
     font-size: 1.3em;
 }
 
@@ -89,7 +108,7 @@ input[type=button]:hover {
     background: #fff;
     border: 1px solid black;
     border-radius: .25em;
-    font-family: 'Ropa Sans', sans-serif;
+    font-family: var(--font-main);
     background: white;
     min-width: 10vw;
     border-radius: .25em;
@@ -99,17 +118,27 @@ input[type=button]:hover {
     text-align: center;
 }
 
-.posicion {
+.rango {
     display: flex;
 }
 
 #result {
     padding: 1em;
     min-height: 100vh;
+    min-width: 30vw;
     width: var(--column-width-result);
-    font-family: 'Ropa Sans', sans-serif;
-    font-size: 1.3em;  
+    font-family: var(--font-main);
+    font-size: 1.3em;
 }
-li {
-    list-style: none;
+ul li {
+    margin-bottom: 10px;
+    clear: both;
+}
+li div {
+    margin-right: 10px;
+    float: left;
+    width: 25px;
+    height: 25px;
+    /* background: var(--color-rgba);*/
+    border: 1px solid black;
 }

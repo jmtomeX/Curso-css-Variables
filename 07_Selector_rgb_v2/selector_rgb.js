@@ -18,7 +18,6 @@ var valor_alpha = 0;
 // coger los estilos de root
 const rootStyles = document.documentElement.style;
 
-
 // Para red
 // función para que se actualiza mientras se arrastra el mouse
 
@@ -89,26 +88,49 @@ alpha.addEventListener('mousemove', e => {
     alpha_txt.innerHTML = valor_alpha;
 });
 
-// REcogemos los valores para añadirlos a la lista
+// Recogemos los valores para añadirlos a la lista
 
 const generate_sample = document.getElementById('generate_sample');
 
+var color_array =  new Array(); 
+var cont = 0;
 // Añadir elementos a la lista de muestras
+
 function addSample(var_name_css) {
     //crear un nuevo item 
+    color_array.push('rgba(' + valor_red + ',' + valor_green + ',' + valor_blue + ',' + valor_alpha + ')');
     var new_li = document.createElement("li");
-    var colorSample = document.createTextNode('rgba(' + valor_red + ',' + valor_green + ',' + valor_blue + ',' + valor_alpha + ')');
+    var colorSample = document.createTextNode(color_array[cont]);
+    console.log(cont + ". " + color_array[cont]);
+
+    var caja_color = generate_divcolor();
+
     if (var_name_css == "null") {
         new_li.append(colorSample);
+        new_li.append(caja_color);
+        cont++;
+
     } else {
         new_li.append("--" + var_name_css + ":");
         new_li.append(colorSample);
-        
-    }
+        new_li.append(caja_color);
+        cont++;
+    }   
+   
 
     // Añadir el elemento al DOM
     const result_list_ul = document.getElementById('result_list');
     result_list_ul.appendChild(new_li);
+}
+// Generar div con clase 
+function generate_divcolor() {
+    var new_divcolor = document.createElement('div');
+    // se le añade la clase con el número de indice
+    new_divcolor.className = "color" + cont;
+    new_divcolor.style.background = color_array[cont];
+    console.log(new_divcolor);
+    return new_divcolor;
+
 }
 
 // Escucha del botón
@@ -116,8 +138,10 @@ generate_sample.addEventListener('click', () => {
     var var_name_css = prompt("Inserta el nombre de la variable css");
     if (var_name_css == null || var_name_css == "") {
         alert("No se ha creado variable.");
+        // función
         addSample("null");
     } else {
+        // función
         addSample(var_name_css);
     }
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        :root {
+            --main-color: blue;
+            --font-size: 1em;
+            --border-color:#ccc;
+            --text-color:#444;
+            --before-text:'';
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        [class*=button] {
+            display: inline-block;
+            padding: 1em 2em;
+            text-decoration: none;
+            border: none;
+            margin: 1em;
+            color: #fff;
+            border-radius: .25em;
+            background-color: var(--main-color);
+            font-size: var(--font-size);
+        }
+
+        .button--alert {
+            --main-color: red;
+        }
+
+        .button--cta {
+            --main-color: orange;
+        }
+
+        .button--small {
+            --font-size: .75em;
+        }
+
+        .button--big {
+            --font-size: 1.25em;
+        }
+        
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3,21fr);
+            grid-gap: 1em;
+        }
+        .card {
+            padding: .5em;
+            background: white;
+            border: 1px solid var(--border-color);
+        }
+        .card::before {
+             content: var(--before-text);
+        }
+        
+        .card h2 {
+            margin: .5em 0 0;
+            font-size: .75em;
+            color: var(--text-color);
+        }
+        
+        .card--discount {
+            --border-color: red;
+        }
+        .card--discount::before {
+            --before-text: 'Con descuento';
+            position: absolute;
+            background: yellow;
+            padding: 1em;
+            opacity: .6;
+        }
+        
+        .card--discount h2{
+            --text-color: red;
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="button">Botón</div>
+    <div class="button--alert">Botón</div>
+    <div class="button--cta">Botón</div>
+    <div class="button--alert button--big">Botón</div>
+    <div class="button--cta button--small">Botón</div>
+    <div class="courses">
+    <div class="card">
+        <img src="https://travelbikecz.com/wp-content/uploads/2017/04/poster-girls-enduro-camp.jpg" alt="">
+        <h2>EnduroBike</h2>
+    </div>
+    <div class="card">
+        <img src="https://ep1.pinkbike.org/p5pb15672277/p5pb15672277.jpg" alt="">
+        <h2>EnduroBike</h2>
+    </div>
+    <div class="card card--discount">
+        <img src="https://i.ytimg.com/vi/jOdmfUApa7I/maxresdefault.jpg" alt="">
+        <h2>EnduroBike</h2>
+    </div>
+     </div>
+</body></html>
